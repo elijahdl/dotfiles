@@ -1,0 +1,16 @@
+rofi.color-enabled: true
+rofi.color-window: #393939, #393939, #268bd2
+rofi.color-normal: #393939, #ffffff, #393939, #268bd2, #ffffff
+rofi.color-active: #393939, #268bd2, #393939, #268bd2, #205171
+rofi.color-urgent: #393939, #f3843d, #393939, #268bd2, #ffc39c
+rofi.font: System San Francisco Display 18
+rofi.bw: 0
+rofi.eh: 2
+rofi.lines: 5
+!rofi.padding: 
+rofi.terminal: urxvtc
+rofi.hide-scrollbar: true
+rofi.fuzzy: true
+!rofi.width: 75 
+
+#    -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" 
