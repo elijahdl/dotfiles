@@ -103,7 +103,7 @@ set $workspace4 "4: Files "
 set $workspace5 "5: "
 set $workspace6 "6: "
 set $workspace7 "7: "
-set $workspace8 "8: "
+set $workspace8 "8: Inbox "
 set $workspace9 "9: Chat "
 set $workspace10 "10: Music "
 
@@ -136,6 +136,7 @@ assign [class="Rhythmbox"] $workspace10
 for_window [class="Spotify"] move to workspace $workspace10
 assign [class="Messenger"] $workspace9
 assign [class="TelegramDesktop"] $workspace9
+assign [class="Thunderbird"] $workspace8
 
 # reload the configuration file
 bindsym $mod+Shift+c reload

@@ -1,16 +1,27 @@
-rofi.color-enabled: true
-rofi.color-window: #393939, #393939, #268bd2
-rofi.color-normal: #393939, #ffffff, #393939, #268bd2, #ffffff
-rofi.color-active: #393939, #268bd2, #393939, #268bd2, #205171
-rofi.color-urgent: #393939, #f3843d, #393939, #268bd2, #ffc39c
-rofi.font: System San Francisco Display 18
-rofi.bw: 0
-rofi.eh: 2
+!rofi.color-enabled: true
+!rofi.color-window: #393939, #393939, #268bd2
+!rofi.color-normal: #393939, #ffffff, #393939, #268bd2, #ffffff
+!rofi.color-active: #393939, #268bd2, #393939, #268bd2, #205171
+!rofi.color-urgent: #393939, #f3843d, #393939, #268bd2, #ffc39c
+!rofi.font: System San Francisco Display 18
+!rofi.bw: 0
+!rofi.eh: 2
 rofi.lines: 5
-!rofi.padding: 
-rofi.terminal: urxvtc
-rofi.hide-scrollbar: true
-rofi.fuzzy: true
-!rofi.width: 75 
+!!rofi.padding: 
+!rofi.terminal: urxvtc
+!rofi.hide-scrollbar: true
+!rofi.fuzzy: true
+!!rofi.width: 75 
+!
+!#    -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" 
 
-#    -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" 
+! ------------------------------------------------------------------------------
+! ROFI Color theme
+! ------------------------------------------------------------------------------
+rofi.color-enabled: true
+rofi.color-window: #004c7c, #0082a3, #414141
+rofi.color-normal: #004c7c, #ffffff, #00818a, #00c1ff, #004c7c
+rofi.color-active: #fdf6e3, #268bd2, #eee8d5, #268bd2, #fdf6e3
+rofi.color-urgent: #fdf6e3, #dc322f, #eee8d5, #dc322f, #fdf6e3
+
+rofi -color-window "#004c7c, #0082a3, #414141" -color-normal "#004c7c, #ffffff, #00818a, #00c1ff, #004c7c" -color-active "#fdf6e3, #268bd2, #eee8d5, #268bd2, #fdf6e3" -color-urgent "#fdf6e3, #dc322f, #eee8d5, #dc322f, #fdf6e3"
