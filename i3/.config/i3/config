@@ -218,6 +218,3 @@ exec spotify
 
 # eli Set wallpaper
 exec_always feh --bg-scale /home/elijahdl/Pictures/wallpaper.jpg
-
-# eli Start desktop compositer
-exec_always compton -f
