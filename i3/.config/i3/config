@@ -93,7 +93,7 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # focus the child container
-#bindsym $mod+d focus child
+bindsym $mod+Shift+a focus child
 
 # eli Give workspaces names
 set $workspace1 "1: Terminal "
@@ -214,7 +214,29 @@ bindsym $mod+ctrl+space exec rofi -show run
 bindsym $mod+shift+x exec i3lock --color "$bg-color"
 
 # eli Launch music player on startup
-exec spotify
+#exec spotify
 
 # eli Set wallpaper
 exec_always feh --bg-scale /home/elijahdl/Pictures/wallpaper.jpg
+
+# eli Application Quicklauncher
+set $quick_launcher Launch: [f]irefox [t]hunderbird [s]potify
+bindsym $mod+o mode "$quick_launcher"
+
+mode "$quick_launcher" {
+	bindsym f exec firefox
+	bindsym t exec thunderbird
+	bindsym s exec spotify
+	
+	bindsym Esc mode "default"
+	bindsym Return mode "default"
+}
+
+# Allow floating windows to be dragged from any point by holding down mod
+floating_modifier $mod
+
+# Focus follow mouse
+focus_follows_mouse no
+
+# Return to prev workspace by pressing current workspace key
+workspace_auto_back_and_forth yes
