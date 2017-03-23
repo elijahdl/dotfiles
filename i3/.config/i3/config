@@ -99,7 +99,7 @@ bindsym $mod+Shift+a focus child
 set $workspace1 "1: Terminal "
 set $workspace2 "2: Browser "
 set $workspace3 "3: Whatever "
-set $workspace4 "4: Files "
+set $workspace4 "4: "
 set $workspace5 "5: "
 set $workspace6 "6: "
 set $workspace7 "7: "
