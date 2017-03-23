@@ -87,3 +87,5 @@ source $ZSH/oh-my-zsh.sh
 fortune|lolcat
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/Library/TeX/texbin:/Applications/Wireshark.app/Contents/MacOS:/Users/elijahdl/Development/shell/classicShellScripting/Ch02/bin:/Users/elijahdl/Development/shell/classicShellScripting/bin
