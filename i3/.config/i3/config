@@ -176,11 +176,11 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # eli Define variables for colors
-set $bg-color       #2f343f
-set $inactive-bg-color  #2f343f
-set $text-color     #f3f4f5
-set $inactive-text-color    #676e7d
-set $urgent-bg-color    #e53935
+set $bg-color       		#2f343f
+set $inactive-bg-color  	#2f343f
+set $text-color     		#f3f4f5
+set $inactive-text-color    	#676e7d
+set $urgent-bg-color    	#e53935
 
 # eli window colors
 #               	border         		background          text		  indicator
