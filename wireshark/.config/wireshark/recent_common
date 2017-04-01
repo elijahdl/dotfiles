@@ -8,6 +8,9 @@
 recent.capture_file: /Users/elijahdl/Documents/Wireshark/hue.pcapng
 recent.capture_file: /Users/elijahdl/Downloads/ftp.pcapng
 recent.capture_file: /Users/elijahdl/Downloads/wireshark02.pcapng
+recent.capture_file: /Users/elijahdl/Downloads/SkypeIRC.cap
+recent.capture_file: /Users/elijahdl/Desktop/mydump
+recent.capture_file: /Users/elijahdl/Desktop/2017-03-30-Freki-Capture.pcap
 
 ######## Recent capture filters (latest last), cannot be altered through command line ########
 
@@ -16,11 +19,16 @@ recent.capture_filter.en0: host 192.168.50.212
 
 ######## Recent display filters (latest last), cannot be altered through command line ########
 
-recent.display_filter: eth.addr == ff:ff:ff:ff:ff:ff and arp
-recent.display_filter: eth.addr == ff:ff:ff:ff:ff:ff
-recent.display_filter: eth
-recent.display_filter: tcp.stream eq 16
-recent.display_filter: ftp
+recent.display_filter: udp.stream eq 37
+recent.display_filter: tcp.stream eq 96
+recent.display_filter: ssl
+recent.display_filter: tcp.stream eq 1
+recent.display_filter: tcp.stream eq 2
+recent.display_filter: tcp.stream eq 3
+recent.display_filter: tcp.stream eq 4
+recent.display_filter: ip.addr==8.8.8.8 && ip.addr==192.168.50.196
+recent.display_filter: udp.stream eq 4
+recent.display_filter: udp.stream eq 5
 
 # Main window geometry.
 # Decimal numbers.
@@ -58,6 +66,60 @@ privs.warn_if_elevated: TRUE
 # TRUE or FALSE (case-insensitive).
 privs.warn_if_no_npf: TRUE
 
+# Geometry and maximized state of plen window.
+# Decimal integers.
+gui.geom.plen.x: 560
+gui.geom.plen.y: 368
+gui.geom.plen.width: 800
+gui.geom.plen.height: 459
+# TRUE or FALSE (case-insensitive).
+gui.geom.plen.maximized: FALSE
+
+# Geometry and maximized state of ExpertInfoDialog window.
+# Decimal integers.
+gui.geom.ExpertInfoDialog.x: 0
+gui.geom.ExpertInfoDialog.y: 22
+gui.geom.ExpertInfoDialog.width: 1152
+gui.geom.ExpertInfoDialog.height: 1151
+# TRUE or FALSE (case-insensitive).
+gui.geom.ExpertInfoDialog.maximized: FALSE
+
+# Geometry and maximized state of FollowStreamDialog window.
+# Decimal integers.
+gui.geom.FollowStreamDialog.x: 236
+gui.geom.FollowStreamDialog.y: 22
+gui.geom.FollowStreamDialog.width: 1280
+gui.geom.FollowStreamDialog.height: 1151
+# TRUE or FALSE (case-insensitive).
+gui.geom.FollowStreamDialog.maximized: FALSE
+
+# Geometry and maximized state of WlanStatisticsDialog window.
+# Decimal integers.
+gui.geom.WlanStatisticsDialog.x: 192
+gui.geom.WlanStatisticsDialog.y: 166
+gui.geom.WlanStatisticsDialog.width: 1536
+gui.geom.WlanStatisticsDialog.height: 863
+# TRUE or FALSE (case-insensitive).
+gui.geom.WlanStatisticsDialog.maximized: FALSE
+
+# Geometry and maximized state of ColoringRulesDialog window.
+# Decimal integers.
+gui.geom.ColoringRulesDialog.x: 320
+gui.geom.ColoringRulesDialog.y: 138
+gui.geom.ColoringRulesDialog.width: 1280
+gui.geom.ColoringRulesDialog.height: 920
+# TRUE or FALSE (case-insensitive).
+gui.geom.ColoringRulesDialog.maximized: FALSE
+
+# Geometry and maximized state of http_req window.
+# Decimal integers.
+gui.geom.http_req.x: 560
+gui.geom.http_req.y: 368
+gui.geom.http_req.width: 800
+gui.geom.http_req.height: 459
+# TRUE or FALSE (case-insensitive).
+gui.geom.http_req.maximized: FALSE
+
 # Geometry and maximized state of PreferencesDialog window.
 # Decimal integers.
 gui.geom.PreferencesDialog.x: 1100
@@ -67,14 +129,32 @@ gui.geom.PreferencesDialog.height: 475
 # TRUE or FALSE (case-insensitive).
 gui.geom.PreferencesDialog.maximized: FALSE
 
-# Geometry and maximized state of FollowStreamDialog window.
+# Geometry and maximized state of ResolvedAddressesDialog window.
 # Decimal integers.
-gui.geom.FollowStreamDialog.x: 265
-gui.geom.FollowStreamDialog.y: 22
-gui.geom.FollowStreamDialog.width: 1280
-gui.geom.FollowStreamDialog.height: 1151
+gui.geom.ResolvedAddressesDialog.x: 0
+gui.geom.ResolvedAddressesDialog.y: 22
+gui.geom.ResolvedAddressesDialog.width: 1280
+gui.geom.ResolvedAddressesDialog.height: 1151
 # TRUE or FALSE (case-insensitive).
-gui.geom.FollowStreamDialog.maximized: FALSE
+gui.geom.ResolvedAddressesDialog.maximized: FALSE
+
+# Geometry and maximized state of BluetoothDevicesDialog window.
+# Decimal integers.
+gui.geom.BluetoothDevicesDialog.x: 192
+gui.geom.BluetoothDevicesDialog.y: 214
+gui.geom.BluetoothDevicesDialog.width: 1536
+gui.geom.BluetoothDevicesDialog.height: 767
+# TRUE or FALSE (case-insensitive).
+gui.geom.BluetoothDevicesDialog.maximized: FALSE
+
+# Geometry and maximized state of IOGraphDialog window.
+# Decimal integers.
+gui.geom.IOGraphDialog.x: 535
+gui.geom.IOGraphDialog.y: 278
+gui.geom.IOGraphDialog.width: 850
+gui.geom.IOGraphDialog.height: 640
+# TRUE or FALSE (case-insensitive).
+gui.geom.IOGraphDialog.maximized: FALSE
 
 # Custom colors.
 # List of custom colors selected in Qt color picker.
