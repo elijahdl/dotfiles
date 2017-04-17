@@ -88,4 +88,4 @@ fortune|lolcat
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Library/TeX/texbin:/Applications/Wireshark.app/Contents/MacOS:/Users/elijahdl/Development/shell/classicShellScripting/Ch02/bin:/Users/elijahdl/Development/shell/classicShellScripting/bin
+PATH=/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Library/TeX/texbin:/Applications/Wireshark.app/Contents/MacOS:/Users/elijahdl/Development/shell/classicShellScripting/Ch02/bin:/Users/elijahdl/Development/shell/classicShellScripting/bin
