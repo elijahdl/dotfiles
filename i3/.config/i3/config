@@ -143,11 +143,11 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 ## exit i3 (logs you out of your X session)
-#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+# bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # eli Use a script as the exit i3 action
-bindsym $mod+Shift+e exec /home/elijahdl/dotfiles/i3/.config/i3/i3-exit
-for_window [class="I3-exit" instance="i3-exit"] floating enable
+#bindsym $mod+Shift+e exec /home/elijahdl/dotfiles/i3/.config/i3/i3-exit
+#for_window [class="I3-exit" instance="i3-exit"] floating enable
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -232,11 +232,31 @@ mode "$quick_launcher" {
 	bindsym Return mode "default"
 }
 
-# Allow floating windows to be dragged from any point by holding down mod
+# eli Allow floating windows to be dragged from any point by holding down mod
 floating_modifier $mod
 
-# Focus follow mouse
+# eli Focus follow mouse
 focus_follows_mouse no
 
-# Return to prev workspace by pressing current workspace key
+# eli Return to prev workspace by pressing current workspace key
 workspace_auto_back_and_forth yes
+
+# eli Use npm package i3-alt-tab
+bindsym $mod+Tab exec i3-alt-tab --next
+bindsym $mod+Shift+Tab exec i3-alt-tab --prev
+
+# eli Mode to handle shutdown, logout, etc.
+set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (shift+s) shutdown
+mode "$mode_system" {
+	bindsym l exec --no-startup-id /home/elijahdl/scripts/i3exit lock, mode "default"
+	bindsym e exec --no-startup-id /home/elijahdl/scripts/i3exit logout, mode "default"
+	bindsym s exec --no-startup-id /home/elijahdl/scripts/i3exit suspend, mode "default"
+	bindsym h exec --no-startup-id /home/elijahdl/scripts/i3exit hibernate, mode "default"
+	bindsym r exec --no-startup-id /home/elijahdl/scripts/i3exit reboot, mode "default"
+	bindsym Shift+s exec --no-startup-id /home/elijahdl/scripts/i3exit shutdown, mode "default"
+
+	# back to normal: Enter or Escape
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+}
+bindsym $mod+Shift+e mode "$mode_system"
