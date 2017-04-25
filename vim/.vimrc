@@ -10,3 +10,6 @@ Plug 'rust-lang/rust.vim'
 call plug#end()
 
 set number
+
+" Enable mouse support
+set mouse=a
