@@ -138,6 +138,9 @@ assign [class="Messenger"] $workspace9
 assign [class="TelegramDesktop"] $workspace9
 assign [class="Thunderbird"] $workspace8
 
+# eli Hide window borders for applications
+for_window [class="chromium"] border none
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -176,11 +179,11 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # eli Define variables for colors
-set $bg-color       		#2f343f
-set $inactive-bg-color  	#2f343f
+set $bg-color       		#2d2d2d
+set $inactive-bg-color  	#2d2d2d
 set $text-color     		#f3f4f5
 set $inactive-text-color    	#676e7d
-set $urgent-bg-color    	#e53935
+set $urgent-bg-color    	#f2777a
 
 # eli window colors
 #               	border         		background          text		  indicator
@@ -194,17 +197,19 @@ hide_edge_borders both
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-        status_command i3blocks -c ~/.config/i3/i3blocks.conf
-	colors {
-        	background $bg-color
-        	separator $757575
-        	#           	    border              background          text
-        	focused_workspace   $bg-color       	$bg-color           $text-color
-        	inactive_workspace  $inactive-bg-color  $inactive-bg-color  $inactive-text-color
-        	urgent_workspace    $urgent-bg-color    $urgent-bg-color    $text-color
-        	}
-	}
+#bar {
+#        status_command i3blocks -c ~/.config/i3/i3blocks.conf
+#	colors {
+#        	background $bg-color
+#        	separator $757575
+#        	#           	    border              background          text
+#        	focused_workspace   $bg-color       	$bg-color           $text-color
+#        	inactive_workspace  $inactive-bg-color  $inactive-bg-color  $inactive-text-color
+#        	urgent_workspace    $urgent-bg-color    $urgent-bg-color    $text-color
+#        	}
+#	}
+
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # eli Launch rofi
 bindsym $mod+d exec rofi -show run 
@@ -220,13 +225,14 @@ bindsym $mod+shift+x exec i3lock --color "$bg-color"
 exec_always feh --bg-scale /home/elijahdl/Pictures/wallpaper.jpg
 
 # eli Application Quicklauncher
-set $quick_launcher Launch: [f]irefox [t]hunderbird [s]potify
+set $quick_launcher Launch: [f]irefox [t]hunderbird [s]potify [n]autilus
 bindsym $mod+o mode "$quick_launcher"
 
 mode "$quick_launcher" {
 	bindsym f exec firefox
 	bindsym t exec thunderbird
 	bindsym s exec spotify
+	bindsym n exec nautilus
 	
 	bindsym Esc mode "default"
 	bindsym Return mode "default"
