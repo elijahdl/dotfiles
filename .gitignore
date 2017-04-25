@@ -1,5 +1,5 @@
 *.swp
-mpd/.config/mpd/state
-mpd/.config/mpd/log
-mpd/.config/mpd/pid
+*/mpd/state
+*/mpd/log
+*/mpd/pid
 vim/.vim/.netrwhist
