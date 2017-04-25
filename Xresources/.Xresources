@@ -2,7 +2,7 @@ URxvt.font: xft:monospace:size=12
 URxvt.scrollBar: false
 
 ! Perl Extensions
-URxvt.perl-ext-common: default,resize-font,matcher,confirm-paste,digital-clock
+URxvt.perl-ext-common: default,resize-font,matcher,confirm-paste
 
 URvxt.resize-font.smaller: c--
 URvxt.resize-font.bigger: c-=
@@ -17,7 +17,7 @@ URxvt*background:                     #2d2d2d
 URxvt*foreground:                     #d3d0c8
 URxvt*cursorColor:                    #d3d0c8
 
-URxvt*scrollColor:                    #d3d0c8
+URxvt*scrollColor:                    #d3d3d3
 URxvt*highlightColor:                 #515151
 URxvt*highlightTextColor:             #a09f93
 
