@@ -50,7 +50,7 @@ module-margin-right = 2
 
 font-0 = fixed:pixelsize=10;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = siji:pixelsize=10;1
+font-2 = FontAwesome:pixelsize:10;0
 
 modules-left = i3
 modules-center = mpd
@@ -126,16 +126,17 @@ type = internal/i3
 format = <label-state> <label-mode>
 index-sort = true
 wrapping-scroll = false
-;strip-wsnumbers = true	;This will split workspace name on ':'
+strip-wsnumbers = true	;This will split workspace name on ':'
 ;
-;ws-icon-0 = 1:
-;ws-icon-1 = 2:
+;ws-icon-0 = 1:
+;ws-icon-1 = 2:
 ;ws-icon-2 = 3:
 ;ws-icon-default = 
 
 ; Only show workspaces on the same output as the bar
 ;pin-workspaces = true
 
+label-mode = %mode%
 label-mode-padding = 2
 label-mode-foreground = #000
 label-mode-background = ${colors.primary}

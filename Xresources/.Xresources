@@ -2,13 +2,15 @@ URxvt.font: xft:monospace:size=12
 URxvt.scrollBar: false
 
 ! Perl Extensions
-URxvt.perl-ext-common: default,resize-font,matcher,confirm-paste
+URxvt.perl-ext-common: default,resize-font,matcher,confirm-paste,keyboard-select,selection-to-clipboard
 
 URvxt.resize-font.smaller: c--
 URvxt.resize-font.bigger: c-=
 
 URvxt.url-launcher: /usr/bin/xdg-open
 URvxt.matcher.button: 1
+
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
 
 ! Base16 Eighties
 ! Scheme: Chris Kempson (http://chriskempson.com)
