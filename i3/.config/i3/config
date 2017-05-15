@@ -179,18 +179,32 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # eli Define variables for colors
-set $bg-color       		#2d2d2d
-set $inactive-bg-color  	#2d2d2d
-set $text-color     		#f3f4f5
-set $inactive-text-color    	#676e7d
-set $urgent-bg-color    	#f2777a
 
-# eli window colors
-#               	border         		background          text		  indicator
-client.focused          $bg-color		$bg-color           $text-color     	  #00ff00
-client.unfocused        $inactive-bg-color  	$inactive-bg-color  $inactive-text-color  #00ff00
-client.focused_inactive $inactive-bg-color  	$inactive-bg-color  $inactive-text-color  #00ff00
-client.urgent           $urgent-bg-color    	$urgent-bg-color    $text-color     	  #00ff00
+# Base16 Atelier Lakeside by Bram de Haan (http://atelierbram.github.io/syntax-highlighting/atelier-schemes/lakeside/)
+# template by Matt Parnell, @parnmatt
+
+set $base00 #161b1d
+set $base01 #1f292e
+set $base02 #516d7b
+set $base03 #5a7b8c
+set $base04 #7195a8
+set $base05 #7ea2b4
+set $base06 #c1e4f6
+set $base07 #ebf8ff
+set $base08 #d22d72
+set $base09 #935c25
+set $base0A #8a8a0f
+set $base0B #568c3b
+set $base0C #2d8f6f
+set $base0D #257fad
+set $base0E #6b6bb8
+set $base0F #b72dd2
+
+client.focused $base0D $base0D $base00 $base01
+client.focused_inactive $base02 $base02 $base03 $base01
+client.unfocused $base01 $base01 $base03 $base01
+client.urgent $base02 $base08 $base07 $base08
+
 
 # eli Hide the border indicator
 hide_edge_borders both

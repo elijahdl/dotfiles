@@ -28,10 +28,21 @@ rofi.lines: 5
 
 ! ------------------------------------------------------------------------------
 ! ROFI Color theme
-! ------------------------------------------------------------------------------
-rofi.color-enabled: true
-rofi.color-window: #393939, #393939, #268bd2
-rofi.color-normal: #393939, #ffffff, #393939, #268bd2, #ffffff
-rofi.color-active: #393939, #268bd2, #393939, #268bd2, #205171
-rofi.color-urgent: #393939, #f3843d, #393939, #268bd2, #ffc39c
+!! ------------------------------------------------------------------------------
+!rofi.color-enabled: true
+!rofi.color-window: #393939, #393939, #268bd2
+!rofi.color-normal: #393939, #ffffff, #393939, #268bd2, #ffffff
+!rofi.color-active: #393939, #268bd2, #393939, #268bd2, #205171
+!rofi.color-urgent: #393939, #f3843d, #393939, #268bd2, #ffc39c
+
+! vim: filetype=yaml
+! rofi template
+! Base16 Atelier Lakeside Dark, by Bram de Haan (http://atelierbram.github.io/syntax-highlighting/atelier-schemes/lakeside/)
+
+! State:           'bg',    'fg',    'bgalt', 'hlbg',  'hlfg'
+rofi.color-normal: #161b1d, #ebf8ff, #161b1d, #ebf8ff, #161b1d
+rofi.color-urgent: #161b1d, #d22d72, #161b1d, #d22d72, #161b1d
+rofi.color-active: #161b1d, #257fad, #161b1d, #257fad, #161b1d
+!                  'bg',    'border'
+rofi.color-window: #161b1d, #ebf8ff
 
