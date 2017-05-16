@@ -183,7 +183,7 @@ bindsym $mod+r mode "resize"
 # Base16 Atelier Lakeside by Bram de Haan (http://atelierbram.github.io/syntax-highlighting/atelier-schemes/lakeside/)
 # template by Matt Parnell, @parnmatt
 
-set $base00 #161b1d
+set $base00 #257fad
 set $base01 #1f292e
 set $base02 #516d7b
 set $base03 #5a7b8c
@@ -196,7 +196,7 @@ set $base09 #935c25
 set $base0A #8a8a0f
 set $base0B #568c3b
 set $base0C #2d8f6f
-set $base0D #257fad
+set $base0D #161b1d
 set $base0E #6b6bb8
 set $base0F #b72dd2
 
