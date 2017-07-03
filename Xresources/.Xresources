@@ -12,6 +12,8 @@ URvxt.matcher.button: 1
 
 URxvt.keysym.M-Escape: perl:keyboard-select:activate
 
+! Fix a weird border issue
+URxvt.borderColor: #161b1d
 
 ! Base16 Atelier Lakeside
 ! Scheme: Bram de Haan (http://atelierbram.github.io/syntax-highlighting/atelier-schemes/lakeside/)

@@ -9,7 +9,7 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod1
+set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -42,7 +42,7 @@ bindsym $mod+Shift+q kill
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
-# eli Rather than using dmenu, I'm using rofi to launch apps
+# eliMod Rather than using dmenu, I'm using rofi to launch apps
 # bindsym $mod+d exec rofi show run -lines 3 -eh 2 -width 100 -padding 800 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color"
 
 # change focus
@@ -95,7 +95,7 @@ bindsym $mod+a focus parent
 # focus the child container
 bindsym $mod+Shift+a focus child
 
-# eli Give workspaces names
+# eliMod Give workspaces names
 set $workspace1 "1: Terminal "
 set $workspace2 "2: Browser "
 set $workspace3 "3: Whatever "
@@ -131,16 +131,17 @@ bindsym $mod+Shift+8 move container to workspace $workspace8
 bindsym $mod+Shift+9 move container to workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace10
 
-# eli Assign applications to workspaces
+# eliMod Assign applications to workspaces
 # use xprop to get a window class
 assign [class="Rhythmbox"] $workspace10
 for_window [class="Spotify"] move to workspace $workspace10
 assign [class="Messenger"] $workspace9
+assign [class="messengerfordesktop"] $workspace9
 assign [class="TelegramDesktop"] $workspace9
 assign [class="Thunderbird"] $workspace8
 assign [class="keepassxc"] $workspace7
 
-# eli Hide window borders for applications
+# eliMod Hide window borders for applications
 for_window [class="chromium"] border none
 
 # reload the configuration file
@@ -150,8 +151,8 @@ bindsym $mod+Shift+r restart
 ## exit i3 (logs you out of your X session)
 # bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
-# eli Use a script as the exit i3 action
-#bindsym $mod+Shift+e exec /home/elijahdl/dotfiles/i3/.config/i3/i3-exit
+# eliMod Use a script as the exit i3 action
+#bindsym $mod+Shift+e exec /home/eliModjahdl/dotfiles/i3/.config/i3/i3-exit
 #for_window [class="I3-exit" instance="i3-exit"] floating enable
 
 # resize window (you can also use the mouse for that)
@@ -180,9 +181,9 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# eli Define variables for colors
+# eliMod Define variables for colors
 
-# Base16 Atelier Lakeside by Bram de Haan (http://atelierbram.github.io/syntax-highlighting/atelier-schemes/lakeside/)
+# Base16 AteliModer Lakeside by Bram de Haan (http://ateliModerbram.github.io/syntax-highlighting/ateliModer-schemes/lakeside/)
 # template by Matt Parnell, @parnmatt
 
 set $base00 #257fad
@@ -208,7 +209,7 @@ client.unfocused $base01 $base01 $base03 $base01
 client.urgent $base02 $base08 $base07 $base08
 
 
-# eli Hide the border indicator
+# eliMod Hide the border indicator
 # hide_edge_borders both
 
 # Start i3bar to display a workspace bar (plus the system information i3status
@@ -227,27 +228,45 @@ client.urgent $base02 $base08 $base07 $base08
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
-# eli Launch rofi
+# eliMod Launch rofi
 bindsym $mod+d exec rofi -show run 
 bindsym $mod+ctrl+space exec rofi -show run 
 
-# eli Lock the screen
-bindsym $mod+shift+x exec i3lock --color "$bg-color"
+# eliMod Lock the screen
+bindsym $mod+shift+x exec i3lock --color "$base01" -i /home/elijahdl/Pictures/wallpaper/lockscreen.png
 
-# eli Launch music player on startup
+# eliMod Launch music player on startup
 #exec spotify
 
-# eli launch syncthing-gtk
+# eliMod Launch chat apps
+exec telegram-desktop
+exec messengerfordesktop
+
+# eliMod launch syncthing-gtk
 exec syncthing-gtk
 
-# eli Set wallpaper
-exec_always feh --bg-scale /home/elijahdl/Pictures/wallpaper.jpg
+# eliMod launch menutray for xdg-menu
+# exec menutray
+# eliMod launch xdgmenu in a window
+set $term urxvt
+bindsym $mod+shift+d exec $term -e 'xdgmenu' --title xdgmenu
+for_window [title="xdgmenu"] floating enable
 
-# eli Application Quicklauncher
-set $quick_launcher Launch: [f]irefox [t]hunderbird [s]potify [n]autilus
+# eliModMod launch compton compositer
+exec_always compton -CG
+
+# eliMod Set wallpaper
+ exec_always --no-startup-id feh --bg-scale '/home/elijahdl/Pictures/wallpaper/wallpaper.png'
+#
+# feh seems to not like being called by i3 for some reason, use nitrogen instead
+# exec nitrogen --restore
+
+# eliMod Application Quicklauncher
+set $quick_launcher Launch: [c]hromium [f]irefox [t]hunderbird [s]potify [n]autilus
 bindsym $mod+o mode "$quick_launcher"
 
 mode "$quick_launcher" {
+	bindsym c exec chromium
 	bindsym f exec firefox
 	bindsym t exec thunderbird
 	bindsym s exec spotify
@@ -257,20 +276,20 @@ mode "$quick_launcher" {
 	bindsym Return mode "default"
 }
 
-# eli Allow floating windows to be dragged from any point by holding down mod
+# eliMod Allow floating windows to be dragged from any point by holding down mod
 floating_modifier $mod
 
-# eli Focus follow mouse
+# eliMod Focus follow mouse
 focus_follows_mouse no
 
-# eli Return to prev workspace by pressing current workspace key
+# eliMod Return to prev workspace by pressing current workspace key
 workspace_auto_back_and_forth yes
 
-# eli Use npm package i3-alt-tab
+# eliMod Use npm package i3-alt-tab
 bindsym $mod+Tab exec i3-alt-tab --next
 bindsym $mod+Shift+Tab exec i3-alt-tab --prev
 
-# eli Mode to handle shutdown, logout, etc.
+# eliMod Mode to handle shutdown, logout, etc.
 set $mode_system System [l] lock, [e] logout, [s] suspend, [h] hibernate, [r] reboot, [shift+s] shutdown
 mode "$mode_system" {
 	bindsym l exec --no-startup-id i3lock --color "$bg-color", mode "default"
@@ -285,3 +304,17 @@ mode "$mode_system" {
 	bindsym Escape mode "default"
 }
 bindsym $mod+Shift+e mode "$mode_system"
+
+# eliMod media keybindings
+#
+# pulse audio
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+
+# media player
+bindsym XF86AudioPlay exec playerctl play
+bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
