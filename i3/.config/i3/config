@@ -32,6 +32,9 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
+# open a file manager window
+bindsym $mod+shift+Return exec thunar
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
@@ -186,10 +189,10 @@ bindsym $mod+r mode "resize"
 # Base16 AteliModer Lakeside by Bram de Haan (http://ateliModerbram.github.io/syntax-highlighting/ateliModer-schemes/lakeside/)
 # template by Matt Parnell, @parnmatt
 
-set $base00 #257fad
+set $base00 #1e9cdb
 set $base01 #1f292e
 set $base02 #516d7b
-set $base03 #5a7b8c
+set $base03 #425863
 set $base04 #7195a8
 set $base05 #7ea2b4
 set $base06 #c1e4f6
@@ -204,7 +207,7 @@ set $base0E #6b6bb8
 set $base0F #b72dd2
 
 client.focused $base0D $base0D $base00 $base01
-client.focused_inactive $base02 $base02 $base03 $base01
+client.focused_inactive $base0D $base0D $base03 $base01
 client.unfocused $base01 $base01 $base03 $base01
 client.urgent $base02 $base08 $base07 $base08
 
@@ -242,6 +245,9 @@ bindsym $mod+shift+x exec i3lock --color "$base01" -i /home/elijahdl/Pictures/wa
 exec telegram-desktop
 exec messengerfordesktop
 
+# eliMod launch keepass
+exec keepassxc
+
 # eliMod launch syncthing-gtk
 exec syncthing-gtk
 
@@ -253,7 +259,10 @@ bindsym $mod+shift+d exec $term -e 'xdgmenu' --title xdgmenu
 for_window [title="xdgmenu"] floating enable
 
 # eliModMod launch compton compositer
-exec_always compton -CG
+exec compton -CG
+
+# eliMod launch compton with key combo
+bindsym $mod+Mod1+shift+c exec compton -CG
 
 # eliMod Set wallpaper
  exec_always --no-startup-id feh --bg-scale '/home/elijahdl/Pictures/wallpaper/wallpaper.png'
@@ -305,8 +314,13 @@ mode "$mode_system" {
 }
 bindsym $mod+Shift+e mode "$mode_system"
 
+# eliMod scratchpad stuff
+# Make the currently focused window a scratchpad
+bindsym $mod+Shift+minus move scratchpad
+# Show the first scratchpad window
+bindsym $mod+minus scratchpad show
+
 # eliMod media keybindings
-#
 # pulse audio
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume

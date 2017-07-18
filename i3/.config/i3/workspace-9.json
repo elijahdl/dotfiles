@@ -1,4 +1,3 @@
-// vim:ts=4:sw=4:et
 {
     "border": "normal",
     "current_border_width": 2,
@@ -15,8 +14,8 @@
        {
        "class": "^TelegramDesktop$",
        "instance": "^Telegram$",
-       // "title": "^Telegram\\ \\(59\\)$",
-       // "transient_for": "^$"
+        "title": "^Telegram\\ \\(59\\)$",
+        "transient_for": "^$"
        }
     ],
     "type": "con"
@@ -37,10 +36,10 @@
     "swallows": [
        {
        "class": "^Messenger\\ for\\ Desktop$",
-       // "instance": "^messenger\\ for\\ desktop$",
+        "instance": "^messenger\\ for\\ desktop$",
        "title": "^Messenger\\ for\\ Desktop$",
-       // "transient_for": "^$",
-       // "window_role": "^browser\\-window$"
+        "transient_for": "^$",
+        "window_role": "^browser\\-window$"
        }
     ],
     "type": "con"
