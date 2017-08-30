@@ -33,7 +33,7 @@ floating_modifier $mod
 bindsym $mod+Return exec i3-sensible-terminal
 
 # open a file manager window
-bindsym $mod+shift+Return exec thunar
+bindsym $mod+shift+Return exec dolphin
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -98,17 +98,62 @@ bindsym $mod+a focus parent
 # focus the child container
 bindsym $mod+Shift+a focus child
 
+# eliMod set monitor layout
+# Asus monitor and laptop monitor at desk
+# exec xrandr --output HDMI-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP-1 --mode 1600x900 --pos 1920x180 --rotate normal --output DVI-D-1 --off
+
+# use a script to configure the monitor
+exec $HOME/.config/i3/monitorDetect.sh
+
+
 # eliMod Give workspaces names
-set $workspace1 "1: Terminal "
-set $workspace2 "2: Browser "
-set $workspace3 "3: Whatever "
-set $workspace4 "4: "
-set $workspace5 "5: "
-set $workspace6 "6: "
-set $workspace7 "7: "
-set $workspace8 "8: Inbox "
-set $workspace9 "9: Chat "
-set $workspace10 "10: Music "
+set $workspace1 "1"
+set $workspace2 "2"
+set $workspace3 "3"
+set $workspace4 "4"
+set $workspace5 "5"
+set $workspace6 "6"
+set $workspace7 "7"
+set $workspace8 "8"
+set $workspace9 "9"
+set $workspace10 "10"
+
+set $workspace11 "11"
+set $workspace12 "12"
+set $workspace13 "13"
+set $workspace14 "14"
+set $workspace15 "15"
+set $workspace16 "16"
+set $workspace17 "17"
+set $workspace18 "18"
+set $workspace19 "19"
+set $workspace20 "20"
+
+set $display_primary 	"HDMI-1"
+set $display_secondary	"DP-1"
+
+# eliMod Assign workspaces to monitors
+workspace $workspace1 output $display_primary
+workspace $workspace2 output $display_primary
+workspace $workspace3 output $display_primary
+workspace $workspace4 output $display_primary
+workspace $workspace5 output $display_primary
+workspace $workspace6 output $display_primary
+workspace $workspace7 output $display_primary
+workspace $workspace8 output $display_primary
+workspace $workspace9 output $display_primary
+workspace $workspace10 output $display_primary
+
+workspace $workspace11 output $display_secondary
+workspace $workspace12 output $display_secondary
+workspace $workspace13 output $display_secondary
+workspace $workspace14 output $display_secondary
+workspace $workspace15 output $display_secondary
+workspace $workspace16 output $display_secondary
+workspace $workspace17 output $display_secondary
+workspace $workspace18 output $display_secondary
+workspace $workspace19 output $display_secondary
+workspace $workspace20 output $display_secondary
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
@@ -121,6 +166,34 @@ bindsym $mod+7 workspace $workspace7
 bindsym $mod+8 workspace $workspace8
 bindsym $mod+9 workspace $workspace9
 bindsym $mod+0 workspace $workspace10
+
+bindsym $mod+Mod1+1 workspace $workspace11; mode "default"
+bindsym $mod+Mod1+2 workspace $workspace12; mode "default"
+bindsym $mod+Mod1+3 workspace $workspace13; mode "default"
+bindsym $mod+Mod1+4 workspace $workspace14; mode "default"
+bindsym $mod+Mod1+5 workspace $workspace15; mode "default"
+bindsym $mod+Mod1+6 workspace $workspace16; mode "default"
+bindsym $mod+Mod1+7 workspace $workspace17; mode "default"
+bindsym $mod+Mod1+8 workspace $workspace18; mode "default"
+bindsym $mod+Mod1+9 workspace $workspace19; mode "default"
+bindsym $mod+Mod1+0 workspace $workspace20; mode "default"
+
+bindsym $mod+Mod1+Shift+1 move container to workspace $workspace11; mode "default"
+bindsym $mod+Mod1+Shift+2 move container to workspace $workspace12; mode "default"
+bindsym $mod+Mod1+Shift+3 move container to workspace $workspace13; mode "default"
+bindsym $mod+Mod1+Shift+4 move container to workspace $workspace14; mode "default"
+bindsym $mod+Mod1+Shift+5 move container to workspace $workspace15; mode "default"
+bindsym $mod+Mod1+Shift+6 move container to workspace $workspace16; mode "default"
+bindsym $mod+Mod1+Shift+7 move container to workspace $workspace17; mode "default"
+bindsym $mod+Mod1+Shift+8 move container to workspace $workspace18; mode "default"
+bindsym $mod+Mod1+Shift+9 move container to workspace $workspace19; mode "default"
+bindsym $mod+Mod1+Shift+0 move container to workspace $workspace20; mode "default"
+	
+
+#	bindsym Escape mode "default"
+#}
+#bindsym $mod+z mode $mode_workspace
+
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $workspace1
@@ -136,13 +209,13 @@ bindsym $mod+Shift+0 move container to workspace $workspace10
 
 # eliMod Assign applications to workspaces
 # use xprop to get a window class
-assign [class="Rhythmbox"] $workspace10
-for_window [class="Spotify"] move to workspace $workspace10
-assign [class="Messenger"] $workspace9
-assign [class="messengerfordesktop"] $workspace9
-assign [class="TelegramDesktop"] $workspace9
+assign [class="Rhythmbox"] $workspace20
+for_window [class="Spotify"] move to workspace $workspace20
+assign [class="Messenger"] $workspace19
+assign [class="messengerfordesktop"] $workspace19
+assign [class="TelegramDesktop"] $workspace19
 assign [class="Thunderbird"] $workspace8
-assign [class="keepassxc"] $workspace7
+assign [class="keepassxc"] $workspace17
 
 # eliMod Hide window borders for applications
 for_window [class="chromium"] border none
@@ -239,11 +312,14 @@ bindsym $mod+ctrl+space exec rofi -show run
 bindsym $mod+shift+x exec i3lock --color "$base01" -i /home/elijahdl/Pictures/wallpaper/lockscreen.png
 
 # eliMod Launch music player on startup
-#exec spotify
+exec spotify
 
 # eliMod Launch chat apps
 exec telegram-desktop
 exec messengerfordesktop
+
+# eliMod launch thunderbird
+exec thunderbird
 
 # eliMod launch keepass
 exec keepassxc

@@ -23,8 +23,8 @@ monitor = ${env:MONITOR:fallback-value}
 override-redirect = true
 wm-restack = i3
 
-[bar/example]
-;monitor = ${env:MONITOR:HDMI-1}
+[bar/bottom]
+monitor = ${env:MONITOR}
 width = 100%
 height = 27
 ;offset-x = 1%
@@ -97,6 +97,7 @@ type = internal/fs
 interval = 25
 
 mount-0 = /
+mount-1 = /mnt/data
 
 label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
